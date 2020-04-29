@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Whole Foods Auto-Buyer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    
+		<script src="../static/jquery.js"></script>
+        <script src="popup.js" type="text/javascript"></script>
+		
+		<style>
+@font-face{
+    font-family: font;
+    src: url(../static/sup.woff);
+}
+            .hidden{display: none;}
+            body{
+                width: 375px;
+            }
+            .button {
+			background: red;
+                border: 1px solid red;
+                border-radius: 0;
+                color: #fff;
+                font-weight: bold;
+                padding: 0.27273em 0;
+                text-align: center;
+                white-space: nowrap;
+                width: 10em;
+            }
+            .button:hover{
+                background: #e24b4b;
+            }
+        </style>
+    </head>
+
+    <body class="p-2 text-xs-center" >
+        <h4 class="mb-2">Whole Foods Auto-Buyer</h4>
+        <p id="status"></p>
+        <div class="row">
+                <button id="start-btn" style="background: red; height: 10em; border-radius: 75%;" class="button">Start</button>
+                <button id="stop-btn" style="background: green; border: 1px solid green; height: 10em;border-radius: 100%;" class="button hidden">Stop</button>
+			</div>
+			<br>
+			<br>
+			<br>
+        <div class="row">
+                <button id="options-btn" class="button">Info</button>
+				</div>
+			<br>
+    </body>
+
+</html>

@@ -1,0 +1,60 @@
+{
+  "manifest_version": 2,
+  "name": "Whole Foods Auto-Buyer",
+  "author": "Genesis Dev",
+  "version": "1",
+  "description": "Auto-buy from Whole Foods.",
+  "options_page": "options/options.html",
+  "icons": {
+    "128": "static/img_def.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://www.amazon.com/gp/buy/shipoptionselect/handlers/display.html*"],
+    "js": ["static/jquery.js", "content_scripts/selection.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/gp/buy/payselect/handlers/display.html*"],
+    "js": ["static/jquery.js", "content_scripts/confirm.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/gp/buy/spc/handlers/display.html*"],
+    "js": ["static/jquery.js", "content_scripts/finish.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/alm/substitution*"],
+    "js": ["static/jquery.js", "content_scripts/renav4.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/alm/byg*"],
+    "js": ["static/jquery.js", "content_scripts/renav3.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/gp/cart/view.html*"],
+    "js": ["static/jquery.js", "content_scripts/renav2.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/gp/yourstore*"],
+    "js": ["static/jquery.js", "content_scripts/renav1.js"],
+    "run_at": "document_end"
+  },{ 
+    "matches": ["*://www.amazon.com/gp/buy/itemselect/handlers/display.html*"],
+    "js": ["static/jquery.js", "content_scripts/quantity1.js"],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+    "tabs",
+    "contentSettings",
+    "storage",
+	"alarms",
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["static/jquery.js", "background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  }
+
+}
